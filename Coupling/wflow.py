@@ -203,8 +203,8 @@ class spot_setup(object):
 	Return single simulation series in a matrix-vector structure
 	"""
         self.updateTablesWflow(params)
-        p = subprocess.check_call(r'%s/%s/RunModelExecut.bat'%(os.path.abspath("."), "single"), shell=True)
-        runTss = pandas.read_table("Wflow/%s/CORMA_data/run0001/run.tss"%self.default_wflow_name,
+        p = subprocess.check_call(r'%s/Wflow/%s/RunModelExecut.bat'%(os.path.abspath("."), "single"), shell=True)
+        runTss = pandas.read_table("Wflow/single/CORMA_data/run0001/run.tss",
                                     skiprows=[i for i in range(35)], 
                                     #sep="|\s*", 
                                     #engine="python", 
